@@ -7,8 +7,8 @@ WORKDIR /app
 
 COPY package.json pnpm-lock.yaml tsconfig.json src ./
 
-RUN pnpm i && \
-  pnpm run ci && \
+RUN corepack enable && \
+  pnpm i && \
   pnpm run build && \
   pnpm prune --production
 
@@ -25,4 +25,6 @@ COPY --from=builder --chown=hono:nodejs /app/package.json /app/package.json
 USER hono
 EXPOSE 3000
 
-CMD ["node", "/app/dist/index.js"]
+WORKDIR /app
+
+CMD ["node", "./dist/index.js"]

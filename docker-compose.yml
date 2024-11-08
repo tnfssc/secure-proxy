@@ -1,10 +1,13 @@
 services:
   secure-proxy:
+    image: "tnfssc/secure-proxy:latest"
     build:
       context: .
       dockerfile: Dockerfile
       tags:
         - "tnfssc/secure-proxy:latest"
+    env_file:
+      - .env
     # ports:
     #   - "3000:3000"
 
