@@ -1,0 +1,13 @@
+services:
+  secure-proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      tags:
+        - "tnfssc/secure-proxy:latest"
+    # ports:
+    #   - "3000:3000"
+
+  cloudflared:
+    image: cloudflare/cloudflared
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARED_TUNNEL_TOKEN}

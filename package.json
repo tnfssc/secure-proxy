@@ -1,0 +1,31 @@
+{
+  "name": "secure-proxy",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "ci": "prettier --check . && pnpm run lint && pnpm run typecheck",
+    "dev": "tsx watch src/index.ts",
+    "format": "prettier --write .",
+    "lint": "eslint src",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.5",
+    "arktype": "2.0.0-rc.22",
+    "dotenv": "^16.4.5",
+    "hono": "^4.6.9"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@types/node": "^20.11.17",
+    "eslint": "^9.14.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-packagejson": "^2.5.3",
+    "tsx": "^4.7.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0"
+  },
+  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
+}
