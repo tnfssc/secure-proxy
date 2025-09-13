@@ -14,7 +14,7 @@
     "@hono/node-server": "^1.13.5",
     "arktype": "2.0.0-rc.22",
     "dotenv": "^16.4.5",
-    "hono": "^4.6.9"
+    "hono": "^4.9.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
